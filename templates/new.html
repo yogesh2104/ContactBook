@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'style-edit.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+	<title>Edit Contact</title>
+</head>
+
+<body>
+	<div class='container'>
+		<header class="hero">
+
+			<a href="/">
+				<i class="fas fa-chevron-circle-left back-btn"></i>
+			</a>
+
+			<div class="hero-info">
+				<h1 class="name">New Contact</h1>
+			</div>
+		</header>
+
+		<form action="" method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			<section class="contact-info">
+				<div class="info-line">
+					<input type="text" class="type" name="fullname" placeholder="Full Name">
+				</div>
+				<div class="info-line">
+					<input type="text" class="type" name="relationship" placeholder="Relationship">
+				</div>
+				<div class="info-line">
+					<input type="text" class="type" name="phone-number" placeholder="Phone Number">
+				</div>
+				<div class="info-line">
+					<input type="text" class="type" name="address" placeholder="Address">
+				</div>
+				<div class="info-line">
+					<input type="text" class="type" name="email" placeholder="Email">
+				</div>
+				<div class="info-line">
+					<input type="file" class="type" name="image" placeholder="Image">
+				</div>
+			</section>
+			<section class="button-container">
+				<div class="update-contact">
+					<i id="save"></i>
+					<button type="submit" class="button">Save Contact</button>	
+				</div>
+			</section>
+		</form>
+	</div>
+</body>
+</html>

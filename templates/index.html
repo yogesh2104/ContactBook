@@ -1,0 +1,62 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+
+	<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
+
+	<title>Contacts List</title>
+</head>
+
+<body>
+	<div class="container">
+
+		<header class="header">
+			<form action="/" method="GET" class="search-bar" id='search-form'>
+
+				<input style="width: auto; height: auto;color: #000; border-radius: 25px; font-size: 25px;" type="search-name" class="contact-search" name="search-area" placeholder="Type Name Here...."
+					value={{search_input}}>
+
+					<button onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;font-family: sans-serif; cursor: pointer;width: auto; height: auto; background-color: rgb(29, 25, 34); font-size: 25px; color: #fff; border-radius: 25px;">Search</button>
+				
+
+			</form>
+			<a style="text-decoration: none;font-family: sans-serif;" href="{% url 'add-contact'  %}"><button style=" width: auto; height: auto; background-color: rgb(29, 25, 34);color: #fff; border-radius: 25px;font-size: 25px; cursor: pointer;">Add New Contact</button></a>
+			
+		</header>
+
+		<section class="contacts-library mt-3">
+			<ul class="contacts-list">
+				{% for contact in contacts reversed %}
+
+				<a href="{% url 'profile' contact.id %}" style="text-decoration: none;">
+
+					<div class="contact-section">
+						<li class="list__item img_item">
+							<img src="{{ contact.imgs.url | title }}" width="80px" height="80px" class="rounded-circle thumb" style="float: left;">		
+							<p class="contact-name mt-4 ml-4" style="float: right;">{{ contact.full_name | title }}</p>
+						</li>
+					</div>
+				</a>
+
+				<hr>
+
+
+				{% empty %}
+				<h3 style="color:#fff;padding:20px;">No contacts found..</h3>
+				{% endfor %}
+			</ul>
+		</section>
+	</div>
+</body>
+
+</html>
