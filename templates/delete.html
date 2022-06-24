@@ -19,9 +19,10 @@
 	<div class="container">
 		<header class="hero">
 			<a href="{% url 'edit-contact' contact.id %}">
-				<i class="fas fa-chevron-circle-left back-btn"></i>
+				<button class="back-btn">Back</button>
 			</a>
 			<div class="hero-info">
+				<img src="{{ contact.imgs.url | title }}" width="200px" height="200px" class="rounded-circle">
 				<h1 class="name">{{ contact.full_name | title }}</h1>
 			</div>
 		</header>

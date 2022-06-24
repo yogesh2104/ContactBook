@@ -12,7 +12,6 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 
-	<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
 	<title>Edit Contact</title>
 </head>
 
@@ -21,7 +20,7 @@
 		<header class="hero">
 
 			<a href="/">
-				<i class="fas fa-chevron-circle-left back-btn"></i>
+				<button class="back-btn">Back</button>
 			</a>
 
 			<div class="hero-info">
@@ -32,28 +31,33 @@
 		<form action="" method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			<section class="contact-info">
-				<div class="info-line">
-					<input type="text" class="type" name="fullname" placeholder="Full Name">
+				<div class="info-line form-group">
+					<label for="fn"> Full name</label>
+					<input type="text" id="fn" class="type" name="fullname" placeholder="Full Name">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="relationship" placeholder="Relationship">
+				<div class="info-line form-group">
+					<label for="r">Relationship</label>
+					<input type="text" id="r" class="type" name="relationship" placeholder="Relationship">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="phone-number" placeholder="Phone Number">
+				<div class="info-line form-group">
+					<label for="pn">Phone Number</label>
+					<input type="text" id="pn" class="type" name="phone-number" placeholder="Phone Number">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="address" placeholder="Address">
+				<div class="info-line form-group">
+					<label for="add">Address</label>
+					<input type="text" id="add" class="type" name="address" placeholder="Address">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="email" placeholder="Email">
+				<div class="info-line form-group">
+					<label for="en"> Email</label>
+					<input type="text" id="en" class="type" name="email" placeholder="Email">
 				</div>
-				<div class="info-line">
-					<input type="file" class="type" name="image" placeholder="Image">
+				<div class="info-line form-group">
+					<label for="si">Select Image</label>
+					<input type="file" id="si" class="type" name="image" placeholder="Image">
 				</div>
 			</section>
 			<section class="button-container">
 				<div class="update-contact">
-					<i id="save"></i>
 					<button type="submit" class="button">Save Contact</button>	
 				</div>
 			</section>

@@ -1,4 +1,33 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    justify-content: space-evenly;
+    color: #fff;
+    padding: 2em;
+    align-items: center;
+    background-color: rgb(54, 32, 201);
+}
+.contacts-library{
+     background: #fff;
+ } 
+.contact-name{
+    color: rgb(8, 0, 0);
+}
+ul{
+    width: 100%;
+}
+.list__item{
+    list-style: none;
+}
+.contact-section{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5em;
+    transition: 0.5s;
+    padding-top: 5px;
 }

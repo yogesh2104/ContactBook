@@ -1,4 +1,29 @@
-*, *::before, *::after {
+*,*::before, *::after{
     box-sizing: border-box;
+    font-family: sans-serif;
+}
+.hero{
+    color: rgb(12, 4, 1);
+    padding: 2em 0;
+}
+.hero-info{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+.info-line{
+    display: flex;
+    color: rgb(13, 1, 1);
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+    border-radius: 20px;
 }
 
+.contact-info{
+    padding: 1.5em;
+}
+p{
+    margin: 0;
+    padding: 1.2em;
+}
