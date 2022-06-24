@@ -11,17 +11,14 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
-
-	<script src="https://kit.fontawesome.com/6b20b1c14d.js" crossorigin="anonymous"></script>
 	<title>Edit Contact</title>
 </head>
 
 <body>
-
-	<div class='container'>
+<div class="container">
 		<header class="hero">
 			<a href="{% url 'profile' contact.id %}">
-				<i class="fas fa-chevron-circle-left back-btn"></i>
+				<button class="back-btn">Back</button>
 			</a>
 			<div class="hero-info">
 				<img src="{{ contact.imgs.url | title }}" width="200px" height="200px" class="rounded-circle">
@@ -31,42 +28,43 @@
 		<form action="" method="POST">
 			{% csrf_token %}
 			<section class="contact-info">
-				<div class="info-line">
-					<input type="text" class="type" name="fullname" placeholder="Full Name"
-						value="{{ contact.full_name | title }}">
+				<div class="info-line form-group">
+					<label for="fullna">Full Name :</label>
+					<input type="text" id="fullna" class="type" name="fullname" placeholder="Full Name" value="{{ contact.full_name | title }}">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="relationship" placeholder="Relationship"
-						value="{{ contact.relationship | title }}">
+				<div class="info-line form-group">
+					<label for="re">Relationship :</label>
+					<input type="text" id="re" class="type" name="relationship" placeholder="Relationship" value="{{ contact.relationship | title }}">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="phone-number" placeholder="Phone Number"
+				<div class="info-line form-group">
+					<label for="cn">Contact Number :</label>
+					<input type="text" id="cn" class="type" name="phone-number" placeholder="Phone Number"
 						value="{{ contact.phone_number }}">
 				</div>
-				<div class="info-line">
-					<input type="text" class="type" name="email" placeholder="Email" value="{{ contact.email }}">
+				<div class="info-line form-group">
+					<label for="em">Email :</label>
+					<input id="em" type="text" class="type" name="email" placeholder="Email" value="{{ contact.email }}">
 				</div>
-				<div class="info-line">
-					<input type="file" class="type" name="imgs" placeholder="" value="{{ contact.image }}">
+				<div class="info-line form-group">
+					<label for="upimg">Upload Image :</label>
+					<input type="file" id="upimg" class="type" name="imgs" placeholder="" value="{{ contact.image }}">
 				</div>
 
-				<div class="info-line">
-					<input type="text" class="type" name="address" placeholder="Address" value="{{ contact.address }}">
+				<div class="info-line form-group">
+					<label for="ad">Address :</label>
+					<input id="ad" type="text" class="type" name="address" placeholder="Address" value="{{ contact.address }}">
 				</div>
 			</section>
-			<section class="button-container">
 				<div class="update-contact">
-					<button class="button" style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px;">Save Contact</button>
+					<button class="button" style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px; cursor: pointer;">Save Contact</button>
 				</div>
-			</section>
 		</form>
-		<section class="button-container">
+		<br>
 			<a style="text-decoration: none;" href="{% url 'delete' contact.id %}">
 				<div class="update-contact">
-					<button class="button" style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px;">Delete Contact</button>
+					<button class="button" style="text-decoration: none;cursor: pointer; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px;">Delete Contact</button>
 				</div>
 			</a>
-		</section>
 	</div>
 </body>
 </html>

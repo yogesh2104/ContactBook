@@ -18,22 +18,17 @@
 </head>
 
 <body>
-	<div class="container">
-
-		<header class="header">
+	<header class="header fluid-continer">
 			<form action="/" method="GET" class="search-bar" id='search-form'>
-
 				<input style="width: auto; height: auto;color: #000; border-radius: 25px; font-size: 25px;" type="search-name" class="contact-search" name="search-area" placeholder="Type Name Here...."
 					value={{search_input}}>
 
 					<button onclick="document.getElementById('search-form').submit();" style="padding-left: 5px;font-family: sans-serif; cursor: pointer;width: auto; height: auto; background-color: rgb(29, 25, 34); font-size: 25px; color: #fff; border-radius: 25px;">Search</button>
-				
-
 			</form>
 			<a style="text-decoration: none;font-family: sans-serif;" href="{% url 'add-contact'  %}"><button style=" width: auto; height: auto; background-color: rgb(29, 25, 34);color: #fff; border-radius: 25px;font-size: 25px; cursor: pointer;">Add New Contact</button></a>
 			
 		</header>
-
+		<div class="container">
 		<section class="contacts-library mt-3">
 			<ul class="contacts-list">
 				{% for contact in contacts reversed %}

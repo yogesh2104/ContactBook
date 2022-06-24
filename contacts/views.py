@@ -17,13 +17,6 @@ def index(request):
  
 def addContact(request):
     if request.method == 'POST':
-        # new_contact = Contact(
-        #     full_name=request.POST['fullname'],
-        #     relationship=request.POST['relationship'],
-        #     email=request.POST['email'],
-        #     phone_number=request.POST['phone-number'],
-        #     address=request.POST['address'],
-        #     )
         new_contact=Contact()
         new_contact.full_name=request.POST.get('fullname')
         new_contact.relationship=request.POST.get('relationship')
