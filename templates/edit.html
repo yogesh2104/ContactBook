@@ -29,29 +29,29 @@
 			{% csrf_token %}
 			<section class="contact-info">
 				<div class="info-line form-group">
-					<label for="fullna">Full Name :</label>
+					<label for="fullna">Full Name </label>
 					<input type="text" id="fullna" class="type" name="fullname" placeholder="Full Name" value="{{ contact.full_name | title }}">
 				</div>
 				<div class="info-line form-group">
-					<label for="re">Relationship :</label>
+					<label for="re">Relationship </label>
 					<input type="text" id="re" class="type" name="relationship" placeholder="Relationship" value="{{ contact.relationship | title }}">
 				</div>
 				<div class="info-line form-group">
-					<label for="cn">Contact Number :</label>
+					<label for="cn">Contact Number </label>
 					<input type="text" id="cn" class="type" name="phone-number" placeholder="Phone Number"
 						value="{{ contact.phone_number }}">
 				</div>
 				<div class="info-line form-group">
-					<label for="em">Email :</label>
+					<label for="em">Email </label>
 					<input id="em" type="text" class="type" name="email" placeholder="Email" value="{{ contact.email }}">
 				</div>
 				<div class="info-line form-group">
-					<label for="upimg">Upload Image :</label>
+					<label for="upimg">Upload Image </label>
 					<input type="file" id="upimg" class="type" name="imgs" placeholder="" value="{{ contact.image }}">
 				</div>
 
 				<div class="info-line form-group">
-					<label for="ad">Address :</label>
+					<label for="ad">Address </label>
 					<input id="ad" type="text" class="type" name="address" placeholder="Address" value="{{ contact.address }}">
 				</div>
 			</section>
