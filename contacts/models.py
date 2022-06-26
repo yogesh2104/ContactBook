@@ -4,11 +4,6 @@ from sqlalchemy import false
 
 # Create your models here.
 
-
-
-
-
-
 class Contact(models.Model):
     full_name = models.CharField(max_length=250)
     relationship = models.CharField(max_length=250)

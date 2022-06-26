@@ -8,3 +8,4 @@ urlpatterns = [
     path('delete/<str:pk>', views.deleteContact, name='delete'),
     path('profile/<str:pk>', views.contactProfile, name='profile')
 ]
+# Compare this snippet from contacts\urls.py:

@@ -17,7 +17,7 @@
 <body>
 		<header class="hero container">
 			<a href="/">
-				<button class="back-btn">Back</button>
+				<button class="btn btn-outline-dark">Back</button>
 			</a>
 			<div class="hero-info">
 				<img src="{{ contact.imgs.url | title }}" width="200px" height="200px" class="rounded-circle">
@@ -41,7 +41,7 @@
 		</section>
 		<a href="{% url 'edit-contact' contact.id %}">
 				<div class="edit-button">
-					<button style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 100px; border-radius: 25px;">Edit</button>
+					<button class="btn btn-outline-danger">Edit</button>
 				</div>
 		</a>
 
