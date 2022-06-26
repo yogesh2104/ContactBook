@@ -3,6 +3,7 @@ import re
 from django.shortcuts import render, redirect
 from .models import Contact
 
+
 def index(request):
     contacts = Contact.objects.all()
     search_input = request.GET.get('search-area')

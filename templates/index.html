@@ -18,8 +18,8 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg bg-light fs-1">
-		<div class="container-fluid ml-5 mr-5">
+	<nav class="navbar navbar-expand-lg bg-dark">
+		<div class="container">
 		  <a class="navbar-brand" href="#">ContactBook</a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -27,12 +27,12 @@
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto">
 			  <li class="nav-item">
-				<a class="nav-link active btn btn-outline-success" aria-current="page" href="{% url 'add-contact'  %}">Add New</a>
 			</li>
 			</ul>
 			<form action="/" method="GET" class="search-bar d-flex" id='search-form'>
-				<input type="search-name" class="contact-search rounded form-control me-2" name="search-area" placeholder="Type Name Here...." value={{search_input}}>
-			<button onclick="document.getElementById('search-form').submit();" class="btn btn-success">Search</button>
+				<input type="search-name" class="contact-search rounded form-control me-2" name="search-area" placeholder="Type Name Here...." value={{search_input}}>&nbsp;
+			<button onclick="document.getElementById('search-form').submit();" class="btn btn-success">Search</button>&nbsp;
+			<a class="nav-link active btn btn-outline-success" aria-current="page" href="{% url 'add-contact'  %}">Add Contact</a>
 			</form>
 		  </div>
 		</div>
