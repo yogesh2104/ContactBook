@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="{% static 'style-edit.css' %}">
-
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" crossorigin="anonymous">
@@ -18,8 +18,9 @@
 <div class="container">
 		<header class="hero">
 			<a href="{% url 'profile' contact.id %}">
-				<button class="back-btn">Back</button>
+				<button class="btn btn-outline-dark">Back</button>
 			</a>
+		<button class="btn btn-outline-info" style="float: right;" id="copys">Share</button>
 			<div class="hero-info">
 				<img src="{{ contact.imgs.url | title }}" width="200px" height="200px" class="rounded-circle">
 				<h1 class="name">{{ contact.full_name | title }}</h1>
@@ -55,16 +56,26 @@
 					<input id="ad" type="text" class="type" name="address" placeholder="Address" value="{{ contact.address }}">
 				</div>
 			</section>
-				<div class="update-contact">
-					<button class="button" style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px; cursor: pointer;">Save Contact</button>
-				</div>
+				<button class="btn btn-outline-primary">Save Contact</button>
+				
 		</form>
 		<br>
-			<a style="text-decoration: none;" href="{% url 'delete' contact.id %}">
-				<div class="update-contact">
-					<button class="button" style="text-decoration: none;cursor: pointer; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px;">Delete Contact</button>
-				</div>
-			</a>
+		<a style="text-decoration: none; "href="{% url 'delete' contact.id %}"><button class="btn btn-outline-danger" >Delete Contact</button></a>
 	</div>
+
+	<script>
+		$('#copys').click(function() {
+		  var name = $('#fullna').val()
+		  var phonenu = $('#cn').val()
+		  var email = $('#em').val()
+		  var address = $('#ad').val()
+		  var relationship = $('#re').val()
+		  
+		  var ret = "***** Customer Details ***** \n\r Name : "+name+" \n\r Phone Number : " + phonenu + " \n\r Email : " + email + " \n\r Address : " + address + " \n\r Relationship : " + relationship ;
+		  console.log(ret)
+		navigator.clipboard.writeText(ret);
+		  alert('Copied to clipboard')
+		})
+		</script>
 </body>
 </html>

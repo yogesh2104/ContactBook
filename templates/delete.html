@@ -19,7 +19,7 @@
 	<div class="container">
 		<header class="hero">
 			<a href="{% url 'edit-contact' contact.id %}">
-				<button class="back-btn">Back</button>
+				<button class="btn btn-outline-dark">Back</button>
 			</a>
 			<div class="hero-info">
 				<img src="{{ contact.imgs.url | title }}" width="200px" height="200px" class="rounded-circle">
@@ -33,7 +33,7 @@
 			<form method='POST'>
 				{% csrf_token %}
 				<div class="delete-contact">
-					<button class="delete-button" type="submit" value="Delete Contact" style="text-decoration: none; background-color: black; color: #fff; height: 50px;width: 200px; border-radius: 25px;">Delete Contact</button>
+					<button class="delete-button btn btn-outline-dark" type="submit" value="Delete Contact">Delete Contact</button>
 
 				</div>
 			</form>
